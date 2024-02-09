@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spiral-container {
+    width: 100%;
+    border-top: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spiral {
+    font-size: 2rem;
+    margin: 10px;
+    visibility: visible;
+    animation-duration: 0.5s;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.game {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.letter {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    font-weight: bolder;
+    font-size: 1.75rem;
+    align-self: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.letter:focus {
+    border: 2px solid #ccc;
+    caret-color: transparent;
+}
+
+@keyframes rotation {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
