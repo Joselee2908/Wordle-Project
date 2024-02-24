@@ -47,14 +47,32 @@ body {
     border: 2px solid #ccc;
     font-weight: bolder;
     font-size: 1.75rem;
+    display: flex;
     align-self: center;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     text-transform: uppercase;
+}
+
+.letter.wrongWord {
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-name: wrongWord;
 }
 
 .letter:focus {
     border: 2px solid #ccc;
     caret-color: transparent;
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 2s linear infinite;
+    background-size: 400% 100%;
 }
 
 @keyframes rotation {
@@ -64,5 +82,25 @@ body {
 
     to {
         rotate: 360deg;
+    }
+}
+
+@keyframes wrongWord {
+    from {
+        border-color: red;
+    }
+
+    to {
+        border-color: #ccc;
+    }
+}
+
+@keyframes rainbow_animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
     }
 }
